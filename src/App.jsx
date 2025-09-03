@@ -1,13 +1,15 @@
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Signin from './pages/signin';   // ensure the filename matches exactly
-import Profile from './pages/Profile';
-import About from './pages/about';
-import SignUp from './pages/SignUp';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import Home from './pages/Home.jsx';
+import Signin from './pages/Signin.jsx';
+import Profile from './pages/Profile.jsx';
+import About from './pages/About.jsx';
+import SignUp from './pages/SignUp.jsx';
+import Header from './compo/Header.jsx';
 
 export default function App() {
   return (
-    <Router>
+    <BrowserRouter>
+      <Header />
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/signin" element={<Signin />} />
@@ -15,6 +17,6 @@ export default function App() {
         <Route path="/about" element={<About />} />
         <Route path="/signup" element={<SignUp />} />
       </Routes>
-    </Router>
+    </BrowserRouter>
   );
 }
