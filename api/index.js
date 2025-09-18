@@ -2,6 +2,7 @@ import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
 import userRouter from './routes/user_routes.js';
+import authRouter from './routes/auth_routes.js';
 dotenv.config();
 
 
@@ -12,7 +13,8 @@ app.listen(3000, () => {
     console.log('API server running on http://localhost:3000');
 
 });
-//app.use(express.json());
+app.use(express.json());
 
 
 app.use('/api/user', userRouter);
+app.use('/api/auth', authRouter);
