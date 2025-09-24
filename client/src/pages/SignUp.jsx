@@ -1,6 +1,4 @@
 
-
-import { set } from 'mongoose';
 import { useState } from 'react'
 import { Link,useNavigate } from 'react-router-dom'
 
@@ -19,7 +17,7 @@ export default function SignUp() {
     e.preventDefault();
     try{
       setloading(true);
-      const res =  await fetch ('api/auth/signup',{
+      const res =  await fetch ('/api/auth/signup',{
         method:"POST",
         headers:{
           'Content-Type':'application/json',
